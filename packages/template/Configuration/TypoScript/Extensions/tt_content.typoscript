@@ -1,0 +1,12 @@
+lib.contentElement {
+    partialRootPaths{
+        10 = EXT:template/Resources/Private/Plugins/tt_content/Partials
+    }
+    layoutRootPaths{
+        10 = EXT:template/Resources/Private/Plugins/tt_content/Layouts
+    }
+    templateRootPaths{
+        10 = EXT:template/Resources/Private/Plugins/tt_content/Templates
+
+    }
+}
