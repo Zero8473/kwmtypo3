@@ -21,6 +21,31 @@ page.10 {
     templateRootPaths {
         10 = EXT:template/Resources/Private/Templates/
     }
+    dataProcessing {
+      10 = TYPO3\CMS\Frontend\DataProcessing\MenuProcessor
+      10 {
+        special = directory
+        special.value = 3
+        levels = 1
+        expandAll = 1
+        titleField = nav_title // title
+        includeSpacer = 1
+        as = mainNav
+      }
+      20 = TYPO3\CMS\Frontend\DataProcessing\MenuProcessor
+      20 {
+        special = directory
+        special.value = 10
+        levels = 1
+        expandAll = 1
+        titleField = nav_title // title
+        includeSpacer = 1
+        as = footerNav
+      }
+
+    }
+
+
 }
 page.includeJSFooter {
     main = EXT:template/Resources/Public/JavaScript/main.js
@@ -39,4 +64,34 @@ config {
     language = de
     spamProtectEmailAddresses = -2
     spamProtectEmailAddresses_atSubst = <span style="display:none;">dontospamme</span>@<wbr><span style="display:none;">gowaway.</span>
+}
+
+lib.sidebar=COA
+lib.sidebar {
+  10 = CONTENT
+  10 {
+      table = tt_content
+      select {
+        pidInList = 9
+        orderBy = sorting
+        where = {#colPos}=0
+      }
+      renderObj = COA
+      renderObj {
+        10 = FLUIDTEMPLATE
+        10 {
+          format = html
+            file = EXT:template/Resources/Private/Plugins/tt_content/Templates/Sidebarcontent.html
+            layoutRootPaths {
+                10 = EXT:template/Resources/Private/Plugins/tt_content/Layouts/
+            }
+            partialRootPaths {
+                10 = EXT:template/Resources/Private/Plugins/tt_content/Partials/
+            }
+            templateRootPaths {
+                10 = EXT:template/Resources/Private/Plugins/tt_content/Templates/
+            }
+        }
+      }
+    }
 }

@@ -1,6 +1,98 @@
 <html xmlns:f="http://typo3.org/ns/TYPO3/Fluid/ViewHelpers" xmlns="http://www.w3.org/1999/xhtml" lang="en" f:schemaLocation="https://fluidtypo3.org/schemas/fluid-master.xsd" data-namespace-typo3-fluid="true">
 <f:layout name="Default" />
+<f:section name="header">
+    <header>
+        <div class="container">
+            <div id="logo"><a href="/" title="KWM"><f:image src="EXT:template/Resources/Public/Icons/logo.svg" alt="KWM logo"/></a></div>
+            <f:comment>
+                <div id="logo asd"><a href="/" title="KWM"><img alt="KW<img <img alt="close" src="Images/Icons/close.svg" />alt="close" src="Images/Icons/close.svg" />M logo" src="Images/logo.svg" /></a></div>
+            </f:comment>
+
+            <div class="mobile-menu-icon"></div>
+            <div id="main-navigation">
+                <nav>
+                    <ul>
+                        <f:for each="{mainNav}" as="nav">
+                            <li><a href="{nav.link}">{nav.title}</a></li>
+                        </f:for>
+                    </ul>
+                </nav>
+            </div>
+            <div class="header-line"></div>
+        </div>
+
+        <section class="sidebar-icons">
+            <div class="toolbar">
+                <f:image src="EXT:template/Resources/Public/Icons/telefon.svg" alt="phone icon"/>
+                <f:image src="EXT:template/Resources/Public/Icons/brief.svg" alt="email icon"/>
+                <f:image src="EXT:template/Resources/Public/Icons/position.svg" alt="Position icon"/>
+
+                <f:comment>
+                    <img alt="phone icon" src="Images/Icons/telefon.svg" />
+                    <img alt="email icon" src="Images/Icons/brief.svg" />
+                    <img alt="Position icon" src="Images/Icons/position.svg" />
+                </f:comment>
+            </div>
+            <div class="toolbar-info">
+                <span class="close-toolbar"><f:image src="EXT:template/Resources/Public/Icons/close.svg" alt="close"/></span>
+                <f:cObject typoscriptObjectPath="lib.sidebar"/>
+            </div>
+        </section>
+    </header>
+</f:section>
+
+
 <f:section name="content">
     <f:cObject typoscriptObjectPath="styles.content.get" />
+</f:section>
+
+
+<f:section name="footer">
+    <footer class="bg-primary">
+        <div class="container two-cols">
+            <div class="two-cols">
+                <div class="logo-footer-wrapper">
+                    <f:image src="EXT:template/Resources/Public/Icons/logo-white.svg" alt="kwm"/>
+                    <div class="under-logo">KWM Kunststoff - Formteile GmbH</div>
+                    <!--<div class="socilas">
+                        <a class="xing" href="#" title="XING"><img alt="xing" src="../Images/Icons/xing.svg" /></a>
+                        <a class="facebook" href="#" title="Facebook"><img alt="facebook" src="../Images/Icons/facebook.svg" /></a>
+                        <a class="instagram" href="#" title="Instagram"><img alt="instagram" src="../Images/Icons/instagram.svg" /></a>
+                    </div>-->
+                </div>
+                <div>
+                    <h3>Kontakt</h3>
+                    <p>
+                        KWM Kunststoff - Formteile GmbH<br/>
+                        Robert - Bosch - Straße 6<br/>
+                        89188 Merklingen
+                    </p>
+                    <p>
+                        Tel: 07337/9602-0<br/>
+                        Fax: 07337/9602-19<br/>
+                        E-Mail: <a href="mailto:info@kwm.de">info@kwm.de</a>
+                    </p>
+                </div>
+            </div>
+            <div class="three-cols">
+                <div>
+                    <h3>RESSOURCEN</h3>
+                    <nav>
+                        <ul>
+                            <f:for each="{footerNav}" as="footer">
+                                <li><a href="{footer.link}">{footer.title}</a></li>
+                            </f:for>
+                            <f:comment>
+                                <li><a href="agb.html">AGB</a></li>
+                                <li><a href="impressum.html">Impressum</a></li>
+                                <li><a href="datenschutz.html">Datenschutz</a></li>
+                            </f:comment>
+
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </footer>
 </f:section>
 </html>

@@ -1,0 +1,60 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+<f:layout name="Default" />
+
+<f:section name="Main">
+        <f:if condition="{data.header}">
+            <f:then>
+                <f:switch expression="{data.header}">
+                    <f:case value="Telefon">
+                        <div class="phone">
+                            <span><f:image src="EXT:template/Resources/Public/Icons/telefon-color.svg" alt="phone"/></span>
+                            <span>Ihr Ansprechpartner vor Ort*</span>
+                            <span class="phone-numbers"> <a href="tel:+49733796020">+ 49 (0)7337 / 9602-0</a></span>
+                        </div>
+                    </f:case>
+                    <f:case value="Öffnungszeiten">
+                        <div class="hours">
+                            <span>* Mo-Fr 8 – 16 Uhr</span>
+                        </div>
+                    </f:case>
+                    <f:case value="Email">
+                        <div class="email-location">
+                            <span>
+                                <span><f:image src="EXT:template/Resources/Public/Icons/brief-color.svg" alt="email"/></span>
+                                <span><a href="mailto:info@kwm.de">E-Mail-Kontakt</a></span>
+                             </span>
+                             <span>
+                                <span><f:image src="EXT:template/Resources/Public/Icons/position-color.svg" alt="location"/></span>
+                                <span><a class="close-if-anfahrt" href="/contact.html#anfahrt-kwm">Anfahrt</a></span>
+                            </span>
+                        </div>
+                    </f:case>
+                </f:switch>
+            </f:then>
+        </f:if>
+
+        <f:comment>
+    <div class="phone">
+        <span><f:image src="EXT:template/Resources/Public/Icons/telefon-color.svg" alt="phone"/></span>
+        <span>Ihr Ansprechpartner vor Ort*</span>
+        <span class="phone-numbers"> <a href="tel:+49733796020">+ 49 (0)7337 / 9602-0</a></span>
+    </div>
+
+    <div class="hours">
+        <span>* Mo-Fr 8 – 16 Uhr</span>
+    </div>
+
+    <div class="email-location">
+                <span>
+                    <span><f:image src="EXT:template/Resources/Public/Icons/brief-color.svg" alt="email"/></span>
+                    <span><a href="mailto:info@kwm.de">E-Mail-Kontakt</a></span>
+                </span>
+        <span>
+                <span><f:image src="EXT:template/Resources/Public/Icons/position-color.svg" alt="location"/></span>
+                <span><a class="close-if-anfahrt" href="/contact.html#anfahrt-kwm">Anfahrt</a></span>
+            </span>
+
+    </div>
+</f:comment>
+</f:section>
+</html>
