@@ -1,0 +1,27 @@
+{
+    "name": "sudhaus7/template",
+    "description": "Sudhaus7 template",
+    "version": "1.0.0",
+    "type": "typo3-cms-extension",
+    "authors": [
+        {
+            "name": "kevin",
+            "role": "Developer",
+            "email": "kmichl@sudhaus7.de"
+        }
+    ],
+    "require": {
+        "typo3/cms-core": "~12.3",
+		"b13/container": "*"
+    },
+    "autoload": {
+        "psr-4": {
+            "Sudhaus7\\Template\\": "Classes/"
+        }
+    },
+    "extra": {
+        "typo3/cms": {
+            "extension-key": "template"
+        }
+    }
+}
