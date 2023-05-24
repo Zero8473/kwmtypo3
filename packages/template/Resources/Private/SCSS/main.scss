@@ -402,6 +402,14 @@ body {
     color: #4D4D4D;
     font-size: 1.25rem;
     font-weight: 400; }
+
+.color-to-right{
+    h1{
+        text-transform: uppercase !important;
+    }
+}
+
+
 @media screen and (max-width: 1370px) {
     body {
         font-size: 1.125rem; } }

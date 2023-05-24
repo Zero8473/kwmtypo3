@@ -1,0 +1,99 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+<f:layout name="Default" />
+<f:section name="Main">
+
+    <f:if condition="{data.header}">
+        <section class="section-title">
+            <div class="container">
+                <div class="title-wrapper">
+                    <h3>{data.header}</h3>
+                    <f:if condition="{data.subheader}">
+                        <h2>{data.subheader}</h2>
+                    </f:if>
+                </div>
+            </div>
+        </section>
+    </f:if>
+
+    <section class="content">
+        <div class="container-xl color-to-right">
+            <div class="container two-cols">
+                <div class="text-element text-welcome">
+                    <f:if condition="{data.bodytext}">
+                        <f:format.html>{data.bodytext}</f:format.html>
+                    </f:if>
+                    <f:comment>
+                        <p>
+                            <strong>
+                                Als mittelständisches Unternehmen entwickeln und produzieren wir schon seit über 50 Jahren
+                                technische Teile aus unserem Lieblingselement Kunststoff. Unser Streben nach bestmöglicher Qualität
+                                und Kontinuität zeichnet unsere Firmenphilosophie und unser Team aus.
+                            </strong>
+                        </p>
+                        <p>
+                            Eine hohe Kundenzufriedenheit erreicht man nicht zuletzt durch hochwertige Produkte und eine durchdachte
+                            Organisation, darüber hinaus auch durch das Vertrauen, Auftreten und Bemühen der Mitarbeiter.
+                        </p>
+                        <p>
+                            Das wirtschaftliche Wachstum und den schnellen Fortschritt der letzten Jahre verstehen und nutzen wir als Ansporn,
+                            uns beständig mit neuen Technologien und Entwicklungen zu beschäftigen, um unserem Anspruch und dem unserer Kunden gerecht zu werden.
+                        </p>
+                    </f:comment>
+                </div>
+                <f:if condition="{files}">
+                    <f:for each="{files}" as="file">
+                        <div class="bg-primary welcome-image">
+                            <f:media file="{file}"/>
+                        </div>
+                    </f:for>
+                        <f:comment>
+                            <img alt="startseite willkommen" src="Images/01_startseite_willkommen.png" />
+                        </f:comment>
+
+                </f:if>
+
+            </div>
+        </div>
+
+    </section>
+
+    <f:comment>
+        <div class="ce-textpic ce-{gallery.position.horizontal} ce-{gallery.position.vertical}{f:if(condition: gallery.position.noWrap, then: ' ce-nowrap')}">
+            <f:if condition="{gallery.position.vertical} != 'below'">
+                <f:render partial="Media/Gallery" arguments="{_all}" />
+            </f:if>
+
+            <f:if condition="{data.bodytext}">
+                <f:then>
+                    <div class="ce-bodytext">
+                        <f:if condition="{gallery.position.noWrap}">
+                            <f:render partial="Header/All" arguments="{_all}" />
+                        </f:if>
+                        <f:format.html>{data.bodytext}</f:format.html>
+                    </div>
+                </f:then>
+                <f:else>
+                    <f:if condition="{gallery.position.noWrap}">
+                        <f:if condition="{data.header}">
+                            <div class="ce-bodytext">
+                                <f:render partial="Header/All" arguments="{_all}" />
+                            </div>
+                        </f:if>
+                    </f:if>
+                </f:else>
+            </f:if>
+
+            <f:if condition="{gallery.position.vertical} == 'below'">
+                <f:render partial="Media/Gallery" arguments="{_all}" />
+            </f:if>
+        </div>
+
+    </f:comment>
+
+
+
+
+
+
+</f:section>
+</html>
