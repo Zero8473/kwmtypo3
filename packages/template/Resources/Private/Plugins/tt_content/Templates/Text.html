@@ -3,11 +3,8 @@
 <f:section name="Main">
     <f:switch expression="{data.layout}">
         <f:case value="0">
-            <f:if condition="{data.header}">
-                <span>{data.header}</span>
-                <f:if condition="{data.subheader}">
-                    <span>{data.subheader}</span>
-                </f:if>
+            <f:if condition="{data.bodytext}">
+                    <f:format.html>{data.bodytext}</f:format.html>
             </f:if>
         </f:case>
     </f:switch>
