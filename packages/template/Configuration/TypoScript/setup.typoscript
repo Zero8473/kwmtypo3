@@ -53,9 +53,10 @@ page.10 {
 
 }
 page.includeJSFooter {
-    main = EXT:template/Resources/Public/JavaScript/main.js
-    slick = EXT:template/Resources/Public/JavaScript/slick.min.js
     jquery = EXT:template/Resources/Public/JavaScript/jquery-3.6.0.min.js
+    slick = EXT:template/Resources/Public/JavaScript/slick.min.js
+    main = EXT:template/Resources/Public/JavaScript/main.js
+    jquery.forceOnTop = 1
 }
 page.includeCSS {
     main = EXT:template/Resources/Public/Css/main.css
