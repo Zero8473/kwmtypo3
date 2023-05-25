@@ -9,11 +9,27 @@
         </f:case>
         <!--label text without header-->
         <f:case value="1">
+            <div class="text-container">
+                <f:if condition="{data.header}">
+                    <div class="white-after-triangle"></div>
+                    <section>
+                        <div class="container">
+                            <div class="title-wrapper">
+                                <h2 class="header-linebreak">{data.header}</h2>
+                            </div>
+                        </div>
+                    </section>
+                    <f:if condition="{data.subheader}">
+                        <h3>{data.subheader}</h3>
+                    </f:if>
+                </f:if>
                 <f:if condition="{data.bodytext}">
                     <div class="text-element">
                         <f:format.html>{data.bodytext}</f:format.html>
                     </div>
                 </f:if>
+            </div>
+
         </f:case>
 
     </f:switch>
