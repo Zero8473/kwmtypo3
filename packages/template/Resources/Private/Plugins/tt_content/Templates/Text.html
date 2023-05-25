@@ -4,9 +4,18 @@
     <f:switch expression="{data.layout}">
         <f:case value="0">
             <f:if condition="{data.bodytext}">
-                    <f:format.html>{data.bodytext}</f:format.html>
+                <f:format.html>{data.bodytext}</f:format.html>
             </f:if>
         </f:case>
+        <!--label text without header-->
+        <f:case value="1">
+                <f:if condition="{data.bodytext}">
+                    <div class="text-element">
+                        <f:format.html>{data.bodytext}</f:format.html>
+                    </div>
+                </f:if>
+        </f:case>
+
     </f:switch>
 
 

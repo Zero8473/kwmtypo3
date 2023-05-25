@@ -10,8 +10,21 @@
                 </f:if>
             </f:if>
         </f:case>
+        <!--label white header with white divider -->
+        <f:case value="1">
+            <f:if condition="{data.header}">
+                <div class="white-after-triangle"></div>
+                <section>
+                    <div class="container">
+                        <div class="title-wrapper">
+                            <h2 class="header-linebreak">{data.header}</h2>
+                        </div>
+                    </div>
+                </section>
+            </f:if>
+
+        </f:case>
     </f:switch>
-
-
 </f:section>
 </html>
+
