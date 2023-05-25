@@ -2,14 +2,7 @@
 <f:layout name="Default" />
 <f:section name="Main">
     <f:switch expression="{data.layout}">
-        <f:case value="0">
-            <f:if condition="{data.header}">
-                <span>{data.header}</span>
-                <f:if condition="{data.subheader}">
-                    <span>{data.subheader}</span>
-                </f:if>
-            </f:if>
-        </f:case>
+
         <!--label white header with white divider -->
         <f:case value="1">
             <f:if condition="{data.header}">
@@ -23,6 +16,15 @@
                 </section>
             </f:if>
 
+        </f:case>
+        <f:case value="2">
+            <!--Header for 3 Column Container-->
+            <f:if condition="{data.header}">
+                <span>{data.header}</span>
+                <f:if condition="{data.subheader}">
+                    <span>{data.subheader}</span>
+                </f:if>
+            </f:if>
         </f:case>
     </f:switch>
 </f:section>
