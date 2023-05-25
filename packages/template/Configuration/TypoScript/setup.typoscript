@@ -2,7 +2,12 @@
 @import 'EXT:template/Configuration/TypoScript/Extensions/*.typoscript'
 @import 'EXT:template/Configuration/TypoScript/Elements/*.typoscript'
 
-
+page.headerData.1 = TEXT
+page.headerData.1.value = <script type="text/javascript" data-cmp-ab="1" src="https://cdn.consentmanager.net/delivery/autoblocking/d1ca07f28377.js" data-cmp-host="a.delivery.consentmanager.net" data-cmp-cdn="cdn.consentmanager.net" data-cmp-codesrc="1"></script>
+page.headerData {
+    20 = Text
+    20.value = <meta name="viewport" content="width=device-width,initial-scale=1.0">
+}
 
 
 
