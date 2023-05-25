@@ -407,6 +407,10 @@ body {
     h1{
         text-transform: uppercase !important;
     }
+
+    &:after {
+        height: 84.5% !important;
+    }
 }
 
 

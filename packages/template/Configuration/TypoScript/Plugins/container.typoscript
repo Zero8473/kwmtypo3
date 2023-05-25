@@ -1,0 +1,97 @@
+// default/general configuration (will add 'children_<colPos>' variable to processedData for each colPos in container
+
+temp.containerFileProcessing {
+    20 = TYPO3\CMS\Frontend\DataProcessing\FilesProcessor
+    20 {
+        references.table = tt_content
+        references.fieldName = image
+        as = files
+    }
+}
+
+tt_content.b13-container-3cols <lib.contentElement
+tt_content.b13-container-3cols {
+    templateName = 3Cols
+    templateRootPaths {
+        10 = EXT:template/Resources/Private/Containers
+    }
+    dataProcessing {
+        201 = B13\Container\DataProcessing\ContainerProcessor
+        201 {
+            colPos = 201
+            as = children_201
+            dataProcessing < temp.containerFileProcessing
+        }
+        202 = B13\Container\DataProcessing\ContainerProcessor
+        202 {
+            colPos = 202
+            as = children_202
+            dataProcessing < temp.containerFileProcessing
+        }
+
+        203 = B13\Container\DataProcessing\ContainerProcessor
+        203 {
+            colPos = 203
+            as = children_203
+            dataProcessing < temp.containerFileProcessing
+        }
+    }
+}
+
+tt_content.b13-container-2cols < lib.contentElement
+tt_content.b13-container-2cols {
+  templateName = 2Cols
+  templateRootPaths {
+    10 = EXT:template/Resources/Private/Containers
+  }
+  dataProcessing {
+    201 = B13\Container\DataProcessing\ContainerProcessor
+    201 {
+      colPos = 201
+      as = children_201
+      dataProcessing < temp.containerFileProcessing
+    }
+    202 = B13\Container\DataProcessing\ContainerProcessor
+    202 {
+      colPos = 202
+      as = children_202
+      dataProcessing < temp.containerFileProcessing
+    }
+  }
+}
+
+
+tt_content.b13-container-hintergrund < lib.contentElement
+tt_content.b13-container-hintergrund {
+  templateName = 1ColHintergrund
+  templateRootPaths {
+    10 = EXT:template/Resources/Private/Containers
+  }
+  dataProcessing {
+    201 = B13\Container\DataProcessing\ContainerProcessor
+    201 {
+      colPos = 201
+      as = children_201
+      dataProcessing < temp.containerFileProcessing
+    }
+  }
+}
+
+
+
+tt_content.b13-container-akkordeon < lib.contentElement
+tt_content.b13-container-akkordeon {
+    templateName = 1ColAkkordeon
+    templateRootPaths {
+        10 = EXT:template/Resources/Private/Containers
+    }
+    dataProcessing {
+        201 = B13\Container\DataProcessing\ContainerProcessor
+        201 {
+            colPos = 201
+            as = children_201
+            dataProcessing < temp.containerFileProcessing
+        }
+    }
+}
+

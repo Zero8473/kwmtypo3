@@ -1,0 +1,80 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/Fluid/ViewHelpers" xmlns="http://www.w3.org/1999/xhtml" lang="en" f:schemaLocation="https://fluidtypo3.org/schemas/fluid-master.xsd" data-namespace-typo3-fluid="true">
+<f:layout name="Default"/>
+<f:section name="Main">
+    <f:switch expression="{data.layout}">
+        <f:case value="0">
+            <section>
+                <div class="container two-cols">
+                    <f:for each="{children_201}" as="record">
+                        <f:format.raw>{record.renderedContent}</f:format.raw>
+                    </f:for>
+                    <f:for each="{children_202}" as="record">
+                        <f:format.raw>{record.renderedContent}</f:format.raw>
+                    </f:for>
+                </div>
+            </section>
+            <f:comment>
+                        <section class="tabbed-content">
+                            <div class="container container---tabs">
+                                <div class="tab-content-wrapper">
+                                    <div id="tab1" class="tab-content content-active">
+                                        <h2>Unsere Lösungen für die Möbelbranche</h2>
+                                        <img title="Möbelbranche" alt="Moebelbranche"  src="Images/Tabs/moebelbranche.png" />
+                                    </div>
+                                    <div id="tab2" class="tab-content">
+                                        <h2>Unsere Lösungen für Konsumartikel</h2>
+                                        <img title="Konsumartikel" alt="Konsumartikel" src="Images/Tabs/konsumartikel.png" />
+                                    </div>
+                                    <div id="tab3" class="tab-content">
+                                        <h2>Unsere Lösungen für das Reinigungsgewerbe</h2>
+                                        <img title="Reinigung" alt="reinigung" src="Images/Tabs/reinigung.png" />
+                                    </div>
+                                    <div id="tab4" class="tab-content">
+                                        <h2>Unsere Lösungen für nachhaltige Stoffe</h2>
+                                        <img title="Nachhaltig" alt="nachhaltig" src="Images/Tabs/nachhaltig.png" />
+                                    </div>
+                                    <div id="tab5" class="tab-content">
+                                        <h2>Unsere Lösungen für die Medizintechnik</h2>
+                                        <img title="Medizin" alt="medizin" src="Images/Tabs/medizin.png" />
+                                    </div>
+                                    <div id="tab6" class="tab-content">
+                                        <h2>Unsere Lösungen für die Agrartechnik</h2>
+                                        <img title="Agrar" alt="agrar" src="Images/Tabs/agrar.png" />
+                                    </div>
+                                    <div id="tab7" class="tab-content">
+                                        <h2>Unsere Lösungen für technische Teile</h2>
+                                        <img title="Technische Teile" alt="technische teile" src="Images/Tabs/technische_teile.png" />
+                                    </div>
+                                </div>
+                                <div class="tab-title-wrapper">
+                                    <!--<div class="tabs-bg-image">
+                                        <img alt="background image" src="../Images/tabs-bg.png" />
+                                    </div>-->
+                                    <a href="#tab1" class="tab-title tab-active">MÖBELBRANCHE</a>
+                                    <a href="#tab2" class="tab-title">KONSUMARTIKEL</a>
+                                    <a href="#tab3" class="tab-title">REINIGUNGSGEWERBE</a>
+                                    <a href="#tab4" class="tab-title">NACHHALTIGE STOFFE</a>
+                                    <a href="#tab5" class="tab-title">MEDIZINTECHNIK</a>
+                                    <a href="#tab6" class="tab-title">AGRARTECHNIK</a>
+                                    <a href="#tab7" class="tab-title">TECHNISCHE TEILE</a>
+                                </div>
+                            </div>
+
+
+                        </section>
+
+                        <div class="container container---readmoreTabs">
+                            <div class="read-more-mobile">
+                                <a href="products.html" class="btn">ERFAHREN SIE MEHR</a>
+                            </div>
+                            <div class="read-more-tabs">
+                                <a href="products.html" class="btn">ERFAHREN SIE MEHR</a>
+                            </div>
+                        </div>
+
+
+                    </f:comment>
+        </f:case>
+    </f:switch>
+</f:section>
+</html>

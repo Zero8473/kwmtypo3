@@ -1,0 +1,30 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/Fluid/ViewHelpers" xmlns="http://www.w3.org/1999/xhtml" lang="en" f:schemaLocation="https://fluidtypo3.org/schemas/fluid-master.xsd" data-namespace-typo3-fluid="true">
+<f:layout name="Default"/>
+<f:section name="Main">
+    <f:switch expression="{data.layout}">
+        <f:case value="0">
+            <section class="content">
+                <div class="container three-cols">
+                    <f:for each="{children_201}" as="record">
+                        <div class="numbers-section">
+                            <f:format.raw>{record.renderedContent}</f:format.raw>
+                        </div>
+                    </f:for>
+                    <f:for each="{children_202}" as="record">
+                        <div class="numbers-section">
+                            <f:format.raw>{record.renderedContent}</f:format.raw>
+                        </div>
+                    </f:for>
+                    <f:for each="{children_203}" as="record">
+                        <div class="numbers-section">
+                            <f:format.raw>{record.renderedContent}</f:format.raw>
+                        </div>
+                    </f:for>
+
+                </div>
+            </section>
+        </f:case>
+
+    </f:switch>
+</f:section>
+</html>
