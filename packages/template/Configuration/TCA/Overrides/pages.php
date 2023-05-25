@@ -1,12 +1,11 @@
 <?php
 
-if (!defined('TYPO3')) {
-    die();
-}
+if (!defined('TYPO3_MODE')) /*die();*/
+
 call_user_func(function () {
     \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::registerPageTSConfigFile(
         'template',
-        'Configuration/TSconfig/Page/page.tsconfig',
-        'Seitendefinitionen template'
+        'Configuration/TSconfig/site.tsconfig',
+        'Seitendefinitionen Sudhaus7 Template'
     );
 });

@@ -1,0 +1,24 @@
+
+TCEFORM {
+    tt_content {
+        layout {
+            # Einzelnen Content-Element Layout umbenennen und erweitern.
+            types {
+                # Content-Element Layout menu_subpages
+                b13-container-hintergrund {
+                    altLabels {
+                        0 = Container mit rotem Hintergrund
+                    }
+                }
+                header {
+                    removeItems = 0,3
+                    altLabels{
+                        0 = Default
+                        1 = Weißer Header mit weißem Divider
+                        2 = Header rot ohne Zeilenumbruch
+                    }
+                }
+            }
+        }
+    }
+}
