@@ -11,12 +11,21 @@ TCEFORM {
                     }
                 }
                 header {
-                    removeItems = 0,3
+                    removeItems = 3
                     altLabels{
-                        0 = Default
+                        0 = tuerkis Header mit tuerkisem Divider
                         1 = Weißer Header mit weißem Divider
                         2 = Header rot ohne Zeilenumbruch
                     }
+                }
+                text{
+                    removeItems = 2,3
+                    altLabels{
+                        0 = Default
+                        1 = Text weiss
+
+                    }
+
                 }
             }
         }
