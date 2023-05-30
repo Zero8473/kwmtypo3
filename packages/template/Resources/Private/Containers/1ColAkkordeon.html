@@ -1,18 +1,16 @@
 <html xmlns:f="http://typo3.org/ns/TYPO3/Fluid/ViewHelpers" xmlns="http://www.w3.org/1999/xhtml" lang="en" f:schemaLocation="https://fluidtypo3.org/schemas/fluid-master.xsd" data-namespace-typo3-fluid="true">
 <f:layout name="Default"/>
 <f:section name="Main">
-<f:switch expression="{data.layout}">
-    <f:case value="0">
-        <f:for each="{children_201}" as="record">
-            <section class="tabbed-content">
-                <div class="container container---tabs">
-                    <f:format.raw>{record.renderedContent}</f:format.raw>
-                </div>
-            </section>
-        </f:for>
-    </f:case>
-</f:switch>
-
-
+    <f:switch expression="{data.layout}">
+        <f:case value="0">
+            <f:for each="{children_201}" as="record">
+                <section class="tabbed-content">
+                    <div class="container container---tabs">
+                        <f:format.raw>{record.renderedContent}</f:format.raw>
+                    </div>
+                </section>
+            </f:for>
+        </f:case>
+    </f:switch>
 </f:section>
 </html>
