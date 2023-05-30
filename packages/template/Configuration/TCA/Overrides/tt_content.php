@@ -62,7 +62,9 @@
                 [
                     'name' => '1.Spalte',
                     'colPos' => 201,
-
+                    'allowed' => [
+                        'CType' => 'image'
+                    ]
                 ]
             ]
         ] // grid configuration
