@@ -73,12 +73,15 @@
                 <f:debug>{data.header_link}</f:debug>
             </f:comment>
 
+            <!-- header link will be rendered as button with subheader as button-text -->
             <f:if condition="{data.header_link}">
                 <div class="container container---readmoreTabs">
                     <div class="read-more-mobile">
                         <f:link.typolink parameter="{data.header_link}" class="btn">
                             <f:format.case mode="upper">
-                                {data.subheader}
+                                <f:if condition="{data.subheader}">
+                                    {data.subheader}
+                                </f:if>
                             </f:format.case>
                         </f:link.typolink>
                     </div>
@@ -86,7 +89,9 @@
                     <div class="read-more-tabs">
                         <f:link.typolink parameter="{data.header_link}" class="btn">
                             <f:format.case mode="upper">
-                                {data.subheader}
+                                <f:if condition="{data.subheader}">
+                                    {data.subheader}
+                                </f:if>
                             </f:format.case>
                         </f:link.typolink>
                     </div>
