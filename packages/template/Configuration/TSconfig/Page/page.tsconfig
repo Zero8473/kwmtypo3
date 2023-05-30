@@ -44,7 +44,7 @@ TCEFORM {
                     removeItems = 2,3
                     altLabels {
                         0 = Slideshow mit rotem Hintergrund
-                        1 = Bilder Akkordeonstyle
+                        1 = Bilder Akkordeonstyle mit Subheader Button
                     }
 
                 }

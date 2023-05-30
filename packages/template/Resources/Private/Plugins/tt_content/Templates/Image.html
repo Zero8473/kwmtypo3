@@ -38,7 +38,7 @@
                 </f:if>
             </section>
         </f:case>
-        <!--images accordeon style-->
+        <!--images accordeon style with subheader as button-->
         <f:case value="1">
             <f:comment>
                 <f:debug>{files}</f:debug>
@@ -68,9 +68,7 @@
                 </div>
 
                 <div class="tab-title-wrapper">
-
                     <f:for each="{files}" as="file" iteration="iterator">
-
                         <f:if condition="{file.title}">
                             <f:if condition="{iterator.isFirst}">
                                 <f:then>
@@ -83,6 +81,34 @@
                         </f:if>
                     </f:for>
                 </div>
+
+                <!-- header link will be rendered as button with subheader as button-text -->
+                <f:if condition="{data.header_link}">
+                    <div class="container container---readmoreTabs-image">
+                        <div class="read-more-mobile">
+                            <f:link.typolink parameter="{data.header_link}" class="btn">
+                                <f:format.case mode="upper">
+                                    <f:if condition="{data.subheader}">
+                                        {data.subheader}
+                                    </f:if>
+                                </f:format.case>
+                            </f:link.typolink>
+                        </div>
+
+                        <div class="read-more-tabs">
+                            <f:link.typolink parameter="{data.header_link}" class="btn">
+                                <f:format.case mode="upper">
+                                    <f:if condition="{data.subheader}">
+                                        {data.subheader}
+                                    </f:if>
+                                </f:format.case>
+                            </f:link.typolink>
+                        </div>
+                    </div>
+                </f:if>
+
+
+
             </f:if>
         </f:case>
     </f:switch>

@@ -1046,7 +1046,13 @@ section.margin-bottom-L {
 .container---readmoreTabs {
     position: relative;
     z-index: 3; }
-
+.container---readmoreTabs-image{
+    position: absolute;
+    z-index: 3;
+    width: 100%;
+    bottom: 0;
+    margin-bottom: -25px;
+}
 .content li {
     font-weight: 300; }
 
