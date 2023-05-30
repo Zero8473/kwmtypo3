@@ -52,13 +52,13 @@
                     <f:for each="{files}" as="file" iteration="iterator">
                         <f:if condition="{iterator.isFirst}">
                             <f:then>
-                                <div id="{file.title}" class="tab-content content-active">
+                                <div id="file-{file.uid}" class="tab-content content-active">
                                     <h2>{data.header}</h2>
                                     <f:media file="{file}"></f:media>
                                 </div>
                             </f:then>
                             <f:else>
-                                <div id="{file.title}" class="tab-content">
+                                <div id="file-{file.uid}" class="tab-content">
                                     <h2>{data.header}</h2>
                                     <f:media file="{file}"></f:media>
                                 </div>
@@ -68,17 +68,18 @@
                 </div>
 
                 <div class="tab-title-wrapper">
+
                     <f:for each="{files}" as="file" iteration="iterator">
+
                         <f:if condition="{file.title}">
                             <f:if condition="{iterator.isFirst}">
                                 <f:then>
-                                    <a href="#{file.title}" class="tab-title tab-active">{file.title}</a>
+                                    <a href="#file-{file.uid}" class="tab-title tab-active">{file.title}</a>
                                 </f:then>
                                 <f:else>
-                                    <a href="#{file.title}" class="tab-title tab-active">{file.title}</a>
+                                    <a href="#file-{file.uid}" class="tab-title tab-active">{file.title}</a>
                                 </f:else>
                             </f:if>
-
                         </f:if>
                     </f:for>
                 </div>
