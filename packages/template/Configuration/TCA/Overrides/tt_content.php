@@ -59,7 +59,13 @@
         'Akkordeon Container für vertikal angerichtete Akkordeonelemente', // description
         [
             [
-                ['name' => '1.Spalte', 'colPos' => 201]
+                [
+                    'name' => '1.Spalte',
+                    'colPos' => 201,
+                    'allowed' => [
+                        'CType' => 'image'
+                    ]
+                ]
             ]
         ] // grid configuration
     )

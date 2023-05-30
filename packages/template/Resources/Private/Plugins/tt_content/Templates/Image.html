@@ -1,43 +1,99 @@
 <html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
 <f:layout name="Default"/>
 <f:section name="Main">
-
-    <section class="header-slider color-to-right">
-        <div class="container-xl">
-            <div class="homepage-slider">
-                <f:if condition="{files}">
-                    <f:for each="{files}" as="file">
-                        <div class="slider-item"><f:media file="{file}"/></div>
-                    </f:for>
-                </f:if>
-
-            </div>
-            <f:if condition="{data.header}">
-                <div class="left-slider-area">
-                    <div class="white-s1">
-                        <h1>{data.header}</h1>
-
-                        <f:if condition="{data.subheader}">
-                            <h2>{data.subheader}</h2>
+    <f:switch expression="{data.layout}">
+        <!--slideshow with red background-->
+        <f:case value="0">
+            <section class="header-slider color-to-right">
+                <div class="container-xl">
+                    <div class="homepage-slider">
+                        <f:if condition="{files}">
+                            <f:for each="{files}" as="file">
+                                <div class="slider-item"><f:media file="{file}"/></div>
+                            </f:for>
                         </f:if>
                     </div>
-                </div>
-            </f:if>
-        </div>
-        <f:if condition="{data.header}">
-            <div class="text--mobile">
-                <div class="white-s1">
-                    <h1>{data.header}</h1>
+                    <f:if condition="{data.header}">
+                        <div class="left-slider-area">
+                            <div class="white-s1">
+                                <h1>{data.header}</h1>
 
-                    <f:if condition="{data.subheader}">
-                        <h2>{data.subheader}</h2>
+                                <f:if condition="{data.subheader}">
+                                    <h2>{data.subheader}</h2>
+                                </f:if>
+                            </div>
+                        </div>
                     </f:if>
                 </div>
-            </div>
-        </f:if>
-    </section>
+                <f:if condition="{data.header}">
+                    <div class="text--mobile">
+                        <div class="white-s1">
+                            <h1>{data.header}</h1>
 
+                            <f:if condition="{data.subheader}">
+                                <h2>{data.subheader}</h2>
+                            </f:if>
+                        </div>
+                    </div>
+                </f:if>
+            </section>
+        </f:case>
+        <!--images accordeon style-->
+        <f:case value="1">
+            <f:comment>
+                <f:debug>{files}</f:debug>
+                <f:for each="{files}" as="file">
+                    <f:debug>{file.title}</f:debug>
+                </f:for>
+            </f:comment>
 
+            <f:if condition="{files}">
+                <div class="tab-content-wrapper">
+                    <f:for each="{files}" as="file" iteration="iterator">
+                        <f:if condition="{iterator.isFirst}">
+                            <f:then>
+                                <div id="{file.title}" class="tab-content content-active">
+                                    <h2>{data.header}</h2>
+                                    <f:media file="{file}"></f:media>
+                                </div>
+                            </f:then>
+                            <f:else>
+                                <div id="{file.title}" class="tab-content">
+                                    <h2>{data.header}</h2>
+                                    <f:media file="{file}"></f:media>
+                                </div>
+                            </f:else>
+                        </f:if>
+                    </f:for>
+                </div>
 
+                <div class="tab-title-wrapper">
+                    <f:for each="{files}" as="file" iteration="iterator">
+                        <f:if condition="{file.title}">
+                            <f:if condition="{iterator.isFirst}">
+                                <f:then>
+                                    <a href="#{file.title}" class="tab-title tab-active">{file.title}</a>
+                                </f:then>
+                                <f:else>
+                                    <a href="#{file.title}" class="tab-title tab-active">{file.title}</a>
+                                </f:else>
+                            </f:if>
+
+                        </f:if>
+                    </f:for>
+                </div>
+            </f:if>
+        </f:case>
+    </f:switch>
 </f:section>
+<f:comment>
+    position: absolute;
+    z-index: 3;
+    width: 100%;
+    bottom: 0;
+    margin-bottom: -25px;
+
+</f:comment>
 </html>
+
+

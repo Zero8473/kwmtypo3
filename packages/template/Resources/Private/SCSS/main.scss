@@ -1015,14 +1015,14 @@ section {
 @media screen and (max-width: 767px) {
     section {
         margin-bottom: 3rem; } }
-section > div > section {
+section > div > section, div > section > div > section {
     margin-bottom: 4rem; }
 @media screen and (max-width: 767px) {
-    section > div > section {
+    section > div > section, div > section > div > section {
         margin-bottom: 2rem; } }
-section > div > section.tabbed-content {
+section.tabbed-content {
     margin-bottom: 0; }
-section > div > section.tabbed-content:before {
+section.tabbed-content:before {
     content: '';
     position: absolute;
     bottom: 0;
@@ -1030,9 +1030,9 @@ section > div > section.tabbed-content:before {
     width: 100%;
     height: 20%; }
 @media screen and (max-width: 1370px) {
-    section > div > section.tabbed-content:before {
+    section.tabbed-content:before {
         content: none; } }
-section > div > section.tabbed-content .container---tabs {
+section.tabbed-content .container---tabs {
     position: relative;
     z-index: 3; }
 section.section-title {
