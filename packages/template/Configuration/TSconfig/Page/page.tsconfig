@@ -4,12 +4,24 @@ TCEFORM {
         layout {
             # Einzelnen Content-Element Layout umbenennen und erweitern.
             types {
-                # Content-Element Layout menu_subpages
                 b13-container-hintergrund {
                     altLabels {
                         0 = Container mit rotem Hintergrund
                     }
                 }
+
+                b13-container-3cols {
+                    removeItems = 1,2,3
+                    altLabels {
+                        0 = Default
+                    }
+                }
+
+                b13-container-2cols {
+                    removeItems = 1,2,3
+
+                }
+
                 header {
                     removeItems = 3
                     altLabels{
@@ -18,12 +30,21 @@ TCEFORM {
                         2 = Header rot ohne Zeilenumbruch
                     }
                 }
-                text{
-                    removeItems = 2,3
+
+                text {
+                    removeItems = 3
                     altLabels{
                         0 = Default
                         1 = Text weiss
+                        2 = Text mit Subheader als Button
+                    }
+                }
 
+                image {
+                    removeItems = 2,3
+                    altLabels {
+                        0 = Slideshow mit rotem Hintergrund
+                        1 = Bilder Akkordeonstyle
                     }
 
                 }
