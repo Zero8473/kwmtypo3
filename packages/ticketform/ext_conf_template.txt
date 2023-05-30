@@ -1,0 +1,8 @@
+# cat=basic//01; type=string; label=redmine url
+redmineurl =
+
+# cat=basic//02; type=string; label=redmine api key
+apikey =
+
+# cat=basic//03; type=string; label=project id
+projectid =

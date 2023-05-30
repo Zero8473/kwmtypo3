@@ -1,0 +1,32 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/Fluid/ViewHelpers"
+      f:schemaLocation="https://fluidtypo3.org/schemas/vhs-master.xsd"
+      xmlns="http://www.w3.org/1999/xhtml"
+      lang="en"
+      data-namespace-typo3-fluid="true">
+
+<f:form id="issueform" action="save" object="{formdata}" objectName="formdata">
+    <p>
+        <label for="category">Produkt</label>
+        <f:form.select property="category" id="category" options="{categories}"/>
+    </p>
+    <p>
+        <label for="subject">Betreff</label>
+        <f:form.textfield property="subject" id="subject"/>
+    </p>
+    <p>
+        <label for="message">Nachricht</label>
+        <f:form.textarea property="message" id="message" />
+    </p>
+    <p>
+        <label for="f_name">Name</label>
+        <f:form.textfield property="name" id="f_name"/>
+    </p>
+    <p>
+        <label for="email">Email</label>
+        <f:form.textfield property="email" id="email"/>
+    </p>
+
+    <f:form.button type="submit">Submit</f:form.button>
+</f:form>
+
+</html>

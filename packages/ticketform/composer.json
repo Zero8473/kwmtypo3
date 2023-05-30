@@ -1,0 +1,34 @@
+{
+	"name": "sudhaus7/ticketform",
+	"type": "typo3-cms-extension",
+	"description": "",
+
+	"require": {
+		"kbsali/redmine-api": "^2.2"
+	},
+	"require-dev": {
+
+	},
+	"config": {
+		"bin-dir": ".build/bin",
+		"optimize-autoloader": true,
+		"sort-packages": true,
+		"vendor-dir": ".build/vendor",
+		"allow-plugins": {
+			"typo3/class-alias-loader": true,
+			"typo3/cms-composer-installers": true
+		}
+	},
+	"extra": {
+		"typo3/cms": {
+			"extension-key": "ticketform",
+			"web-dir": ".build/public"
+		}
+	},
+	"autoload": {
+		"psr-4": {
+			"Sudhaus7\\Ticketform\\": "Classes"
+		}
+	}
+
+}
