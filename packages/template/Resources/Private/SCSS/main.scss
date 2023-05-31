@@ -403,6 +403,7 @@ body {
     font-size: 1.25rem;
     font-weight: 400; }
 
+/*CSS Edits*/
 .color-to-right{
     h1{
         text-transform: uppercase !important;
@@ -412,6 +413,12 @@ body {
         height: 84.5% !important;
     }
 }
+
+.title-linebreak{
+    width:40%;
+}
+
+
 
 
 @media screen and (max-width: 1370px) {

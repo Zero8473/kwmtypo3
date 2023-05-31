@@ -2,6 +2,7 @@
 <f:layout name="Default" />
 <f:section name="Main">
     <f:switch expression="{data.layout}">
+
         <f:case value="0">
             <f:if condition="{data.header}">
                 <section class="section-title">
@@ -35,6 +36,44 @@
                 </div>
             </section>
         </f:case>
+
+        <f:case value="1">
+            <section>
+                <div class="container">
+                    <div class="title-wrapper title-linebreak">
+                        <h2>{data.header}</h2>
+                    </div>
+                </div>
+            </section>
+
+            <section class="content">
+                <div class="container-xl two-cols right-small">
+                    <f:if condition="{files}">
+                        <f:for each="{files}" as="file">
+                            <f:media class="width-auto-img" file="{file}"/>
+                        </f:for>
+                    </f:if>
+                    <f:comment>
+                        <div><img class="width-auto-img" alt="collage_nachhaltigkeit" src="Images/neu_bild_nachhaltigkeit.png" /></div>
+                    </f:comment>
+                    <div>
+                        <f:format.html>{data.bodytext}</f:format.html>
+                        <f:if condition="{data.header_link}">
+                            <p>
+                                <f:link.typolink parameter="{data.header_link}" class="btn">
+                                    <f:if condition="{data.subheader}">
+                                        <f:format.case mode="upper">{data.subheader}</f:format.case>
+                                    </f:if>
+                                </f:link.typolink>
+                            </p>
+                        </f:if>
+                    </div>
+                </div>
+
+            </section>
+
+        </f:case>
+
     </f:switch>
 </f:section>
 </html>

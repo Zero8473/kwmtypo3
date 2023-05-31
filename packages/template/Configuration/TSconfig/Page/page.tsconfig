@@ -46,6 +46,14 @@ TCEFORM {
                         0 = Slideshow mit rotem Hintergrund
                         1 = Bilder Akkordeonstyle mit Subheader Button
                     }
+                }
+
+                textpic {
+                    removeItems = 2,3
+                    altLabels {
+                        0 = Default
+                        1 = Textpic mit Subheader Button
+                    }
 
                 }
             }

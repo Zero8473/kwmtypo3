@@ -2,6 +2,7 @@
 <f:layout name="Default"/>
 <f:section name="Main">
     <f:switch expression="{data.layout}">
+
         <!--slideshow with red background-->
         <f:case value="0">
             <section class="header-slider color-to-right">
@@ -38,6 +39,9 @@
                 </f:if>
             </section>
         </f:case>
+
+
+
         <!--images accordeon style with subheader as button-->
         <f:case value="1">
             <f:comment>
@@ -75,7 +79,7 @@
                                     <a href="#file-{file.uid}" class="tab-title tab-active">{file.title}</a>
                                 </f:then>
                                 <f:else>
-                                    <a href="#file-{file.uid}" class="tab-title tab-active">{file.title}</a>
+                                    <a href="#file-{file.uid}" class="tab-title">{file.title}</a>
                                 </f:else>
                             </f:if>
                         </f:if>
@@ -106,21 +110,10 @@
                         </div>
                     </div>
                 </f:if>
-
-
-
             </f:if>
         </f:case>
     </f:switch>
 </f:section>
-<f:comment>
-    position: absolute;
-    z-index: 3;
-    width: 100%;
-    bottom: 0;
-    margin-bottom: -25px;
-
-</f:comment>
 </html>
 
 
