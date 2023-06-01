@@ -18,7 +18,11 @@ TCEFORM {
                 }
 
                 b13-container-2cols {
-                    removeItems = 1,2,3
+                    removeItems = 2,3
+                    altLabels {
+                        0 = Default
+                        1 = 2 Spalten mit kleinem Bild
+                    }
 
                 }
 
@@ -34,25 +38,27 @@ TCEFORM {
                 text {
                     removeItems = 3
                     altLabels{
-                        0 = Default
+                        0 = Default mit türkiser Überschrift
                         1 = Text weiss
                         2 = Text mit Subheader als Button
                     }
                 }
 
                 image {
-                    removeItems = 2,3
+                    removeItems = 3
                     altLabels {
-                        0 = Slideshow mit rotem Hintergrund
+                        0 = Default
                         1 = Bilder Akkordeonstyle mit Subheader Button
+                        2 = Slideshow mit rotem Hintergrund
                     }
                 }
 
                 textpic {
-                    removeItems = 2,3
+                    removeItems = 3
                     altLabels {
-                        0 = Default
-                        1 = Textpic mit Subheader Button
+                        0 = Bild rechts
+                        1 = Bilder links mit Subheader Button
+                        2 = Textpic mit rotem Hintergrund und Bild rechts
                     }
 
                 }

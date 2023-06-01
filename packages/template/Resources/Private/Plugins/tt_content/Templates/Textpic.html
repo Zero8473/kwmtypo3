@@ -1,8 +1,9 @@
 <html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
-<f:layout name="Default" />
+<f:layout name="Default"/>
 <f:section name="Main">
     <f:switch expression="{data.layout}">
 
+        <!--picture on the right-->
         <f:case value="0">
             <f:if condition="{data.header}">
                 <section class="section-title">
@@ -37,6 +38,7 @@
             </section>
         </f:case>
 
+        <!--pic on the left and subheader button on the right-->
         <f:case value="1">
             <section>
                 <div class="container">
@@ -54,7 +56,8 @@
                         </f:for>
                     </f:if>
                     <f:comment>
-                        <div><img class="width-auto-img" alt="collage_nachhaltigkeit" src="Images/neu_bild_nachhaltigkeit.png" /></div>
+                        <div><img class="width-auto-img" alt="collage_nachhaltigkeit"
+                                  src="Images/neu_bild_nachhaltigkeit.png"/></div>
                     </f:comment>
                     <div>
                         <f:format.html>{data.bodytext}</f:format.html>
@@ -72,6 +75,47 @@
 
             </section>
 
+        </f:case>
+
+        <!--Red background with pic on the right-->
+        <f:case value="2">
+            <section class="content no-padding-bottom">
+                <div class="container-xl bg-primary with-white-triangle">
+                    <f:if condition="{data.header}">
+                        <div class="white-after-triangle"></div>
+                        <section>
+                            <div class="container">
+                                <div class="title-wrapper title-linebreak">
+                                    <h2>{data.header}</h2>
+                                    <f:if condition="{data.subheader}">
+                                        <h3>{data.subheader}</h3>
+                                    </f:if>
+
+                                </div>
+                            </div>
+                        </section>
+                    </f:if>
+
+                    <section class="special-layout-1">
+                        <div class="container-xl">
+                            <div class="container two-cols left-small">
+                                <f:if condition="{data.bodytext}">
+                                    <div>
+                                        <f:format.html>{data.bodytext}</f:format.html>
+                                    </div>
+                                </f:if>
+                                <f:if condition="{files}">
+                                    <f:for each="{files}" as="file">
+                                        <div>
+                                            <f:media file="{file}"/>
+                                        </div>
+                                    </f:for>
+                                </f:if>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+            </section>
         </f:case>
 
     </f:switch>

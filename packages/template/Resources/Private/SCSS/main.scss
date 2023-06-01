@@ -418,6 +418,10 @@ body {
     width:40%;
 }
 
+.text-container{
+    color:#FFFFFF;
+}
+
 
 
 
@@ -1125,10 +1129,10 @@ section.margin-bottom-L {
 @media screen and (max-width: 1023px) {
     .title-wrapper h3 {
         font-size: 1.3rem; } }
-.title-wrapper.in-col {
+.title-wrapper.in-col, container.two-cols section-title  {
     padding-bottom: 5rem; }
 @media screen and (max-width: 767px) {
-    .title-wrapper.in-col {
+    .title-wrapper.in-col, container.two-cols section-title  {
         padding-bottom: 2.5rem; } }
 @media screen and (max-width: 767px) {
     .title-wrapper br {

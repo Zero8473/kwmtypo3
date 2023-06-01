@@ -2,9 +2,17 @@
 <f:layout name="Default"/>
 <f:section name="Main">
     <f:switch expression="{data.layout}">
+        <!--default-->
+        <f:case value="0">
+            <f:if condition="{files}">
+                <f:for each="{files}" as="file">
+                    <div><f:media file="{file}" class="move-to-right"/></div>
+                </f:for>
+            </f:if>
+        </f:case>
 
         <!--slideshow with red background-->
-        <f:case value="0">
+        <f:case value="2">
             <section class="header-slider color-to-right">
                 <div class="container-xl">
                     <div class="homepage-slider">
@@ -50,68 +58,78 @@
                     <f:debug>{file.title}</f:debug>
                 </f:for>
             </f:comment>
-
-            <f:if condition="{files}">
-                <div class="tab-content-wrapper">
-                    <f:for each="{files}" as="file" iteration="iterator">
-                        <f:if condition="{iterator.isFirst}">
-                            <f:then>
-                                <div id="file-{file.uid}" class="tab-content content-active">
-                                    <h2>{data.header}</h2>
-                                    <f:media file="{file}"></f:media>
+            <section class="tabbed-content">
+                <div class="container container---tabs">
+                    <section class="tabbed-content">
+                        <div class="container container---tabs">
+                            <f:if condition="{files}">
+                                <div class="tab-content-wrapper">
+                                    <f:for each="{files}" as="file" iteration="iterator">
+                                        <f:if condition="{iterator.isFirst}">
+                                            <f:then>
+                                                <div id="file-{file.uid}" class="tab-content content-active">
+                                                    <h2>{data.header}</h2>
+                                                    <f:media file="{file}"></f:media>
+                                                </div>
+                                            </f:then>
+                                            <f:else>
+                                                <div id="file-{file.uid}" class="tab-content">
+                                                    <h2>{data.header}</h2>
+                                                    <f:media file="{file}"></f:media>
+                                                </div>
+                                            </f:else>
+                                        </f:if>
+                                    </f:for>
                                 </div>
-                            </f:then>
-                            <f:else>
-                                <div id="file-{file.uid}" class="tab-content">
-                                    <h2>{data.header}</h2>
-                                    <f:media file="{file}"></f:media>
-                                </div>
-                            </f:else>
-                        </f:if>
-                    </f:for>
-                </div>
 
-                <div class="tab-title-wrapper">
-                    <f:for each="{files}" as="file" iteration="iterator">
-                        <f:if condition="{file.title}">
-                            <f:if condition="{iterator.isFirst}">
-                                <f:then>
-                                    <a href="#file-{file.uid}" class="tab-title tab-active">{file.title}</a>
-                                </f:then>
-                                <f:else>
-                                    <a href="#file-{file.uid}" class="tab-title">{file.title}</a>
-                                </f:else>
+                                <div class="tab-title-wrapper">
+                                    <f:for each="{files}" as="file" iteration="iterator">
+                                        <f:if condition="{file.title}">
+                                            <f:if condition="{iterator.isFirst}">
+                                                <f:then>
+                                                    <a href="#file-{file.uid}" class="tab-title tab-active">{file.title}</a>
+                                                </f:then>
+                                                <f:else>
+                                                    <a href="#file-{file.uid}" class="tab-title">{file.title}</a>
+                                                </f:else>
+                                            </f:if>
+                                        </f:if>
+                                    </f:for>
+                                </div>
+
+                                <!-- header link will be rendered as button with subheader as button-text -->
+                                <f:if condition="{data.header_link}">
+                                    <div class="container container---readmoreTabs-image">
+                                        <div class="read-more-mobile">
+                                            <f:link.typolink parameter="{data.header_link}" class="btn">
+                                                <f:format.case mode="upper">
+                                                    <f:if condition="{data.subheader}">
+                                                        {data.subheader}
+                                                    </f:if>
+                                                </f:format.case>
+                                            </f:link.typolink>
+                                        </div>
+
+                                        <div class="read-more-tabs">
+                                            <f:link.typolink parameter="{data.header_link}" class="btn">
+                                                <f:format.case mode="upper">
+                                                    <f:if condition="{data.subheader}">
+                                                        {data.subheader}
+                                                    </f:if>
+                                                </f:format.case>
+                                            </f:link.typolink>
+                                        </div>
+                                    </div>
+                                </f:if>
                             </f:if>
-                        </f:if>
-                    </f:for>
+                        </div>
+                    </section>
                 </div>
-
-                <!-- header link will be rendered as button with subheader as button-text -->
-                <f:if condition="{data.header_link}">
-                    <div class="container container---readmoreTabs-image">
-                        <div class="read-more-mobile">
-                            <f:link.typolink parameter="{data.header_link}" class="btn">
-                                <f:format.case mode="upper">
-                                    <f:if condition="{data.subheader}">
-                                        {data.subheader}
-                                    </f:if>
-                                </f:format.case>
-                            </f:link.typolink>
-                        </div>
-
-                        <div class="read-more-tabs">
-                            <f:link.typolink parameter="{data.header_link}" class="btn">
-                                <f:format.case mode="upper">
-                                    <f:if condition="{data.subheader}">
-                                        {data.subheader}
-                                    </f:if>
-                                </f:format.case>
-                            </f:link.typolink>
-                        </div>
-                    </div>
-                </f:if>
-            </f:if>
+            </section>
         </f:case>
+
+
+
     </f:switch>
 </f:section>
 </html>

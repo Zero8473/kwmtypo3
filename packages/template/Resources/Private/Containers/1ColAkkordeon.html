@@ -2,7 +2,7 @@
 <f:layout name="Default"/>
 <f:section name="Main">
     <f:switch expression="{data.layout}">
-        <f:case value="0">
+        <f:case value="4">
             <f:for each="{children_201}" as="record">
                 <section class="tabbed-content">
                     <div class="container container---tabs">
@@ -10,6 +10,29 @@
                     </div>
                 </section>
             </f:for>
+        </f:case>
+
+
+        <!--default akkordeon-->
+        <f:case value="0">
+            <div>
+                <div class="accordions">
+                    <f:for each="{children_201}" as="record">
+                        <div class="acc-wrapper">
+                            <span class="acc-arrow"></span>
+                            <f:if condition="{record.header}">
+                                <a class="acc-title link-with-arrow-right" href="#">{record.header}</a>
+                            </f:if>
+                            <f:if condition="{record.bodytext}">
+                                <div class="acc-content hide">
+                                    <f:format.html>{record.bodytext}</f:format.html>
+                                </div>
+                            </f:if>
+                        </div>
+                    </f:for>
+                </div>
+            </div>
+
         </f:case>
     </f:switch>
 </f:section>
