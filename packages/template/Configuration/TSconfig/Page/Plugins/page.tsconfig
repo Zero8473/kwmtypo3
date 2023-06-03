@@ -4,9 +4,27 @@ TCEFORM {
         layout {
             # Einzelnen Content-Element Layout umbenennen und erweitern.
             types {
+
+                b13-container-akkordeon {
+                    removeItems = 1,2,3,4
+                    altLabels {
+                        0 = Default
+                    }
+                }
+
                 b13-container-hintergrund {
+                    removeItems = 2,3
                     altLabels {
                         0 = Container mit rotem Hintergrund
+                        1 = Container Farbe Visitenkarten
+                    }
+                }
+
+                b13-container-2cols {
+                    removeItems = 2,3
+                    altLabels {
+                        0 = Default
+                        1 = 2 Spalten mit kleinem Bild
                     }
                 }
 
@@ -17,13 +35,12 @@ TCEFORM {
                     }
                 }
 
-                b13-container-2cols {
+                b13-container-staffcards {
                     removeItems = 2,3
                     altLabels {
                         0 = Default
-                        1 = 2 Spalten mit kleinem Bild
+                        1 = Alternative test
                     }
-
                 }
 
                 header {
