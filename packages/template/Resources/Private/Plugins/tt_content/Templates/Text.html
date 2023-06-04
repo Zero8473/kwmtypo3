@@ -4,23 +4,25 @@
     <f:switch expression="{data.layout}">
         <!--turqoise header with black text-->
         <f:case value="0">
-            <f:if condition="{data.header}">
-                <div class="title-wrapper in-col">
-                    <h2>Unser Leistungsspektrum</h2>
-                    <f:if condition="{data.subheader}">
-                        <h3>{data.subheader}</h3>
+            <div class="container">
+                <div class="content text">
+                    <f:if condition="{data.header}">
+                        <div class="title-wrapper in-col">
+                            <h2>{data.header}</h2>
+                            <f:if condition="{data.subheader}">
+                                <h3>{data.subheader}</h3>
+                            </f:if>
+                        </div>
+                    </f:if>
+                    <f:if condition="{data.bodytext}">
+                        <div>
+                            <f:format.html>{data.bodytext}</f:format.html>
+                        </div>
                     </f:if>
                 </div>
-            </f:if>
-            <f:if condition="{data.bodytext}">
-                <div>
-                    <p>
-                        <f:format.html>{data.bodytext}</f:format.html>
-                    </p>
-                </div>
-            </f:if>
-
+            </div>
         </f:case>
+
         <!--label text with white header-->
         <f:case value="1">
             <div class="text-container">

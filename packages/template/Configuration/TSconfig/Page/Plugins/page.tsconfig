@@ -62,11 +62,11 @@ TCEFORM {
                 }
 
                 image {
-                    removeItems = 3
                     altLabels {
                         0 = Default
                         1 = Bilder Akkordeonstyle mit Subheader Button
                         2 = Slideshow mit rotem Hintergrund
+                        3 = Partnerportfolio
                     }
                 }
 
