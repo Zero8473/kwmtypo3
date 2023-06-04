@@ -20,32 +20,6 @@
                 </div>
             </f:if>
 
-            <f:comment>
-                <f:if condition="{data.header}">
-                    <section class="section-title">
-                        <div class="container">
-                            <div class="title-wrapper">
-                                <h3>{data.header}</h3>
-                                <f:if condition="{data.subheader}">
-                                    <h2>{data.subheader}</h2>
-                                </f:if>
-                            </div>
-                        </div>
-                    </section>
-                </f:if>
-                <section class="content">
-                    <div class="container-xl color-to-right">
-                        <div class="container two-cols">
-                            <div class="text-element text-welcome">
-                                <f:if condition="{data.bodytext}">
-                                    <f:format.html>{data.bodytext}</f:format.html>
-                                </f:if>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-            </f:comment>
-
         </f:case>
         <!--label text with white header-->
         <f:case value="1">
