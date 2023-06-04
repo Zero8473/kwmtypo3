@@ -8,7 +8,7 @@
             <f:if condition="{data.header}">
                 <section class="section-title">
                     <div class="container">
-                        <div class="title-wrapper">
+                        <div class="title-wrapper title-linebreak">
                             <h3>{data.header}</h3>
                             <f:if condition="{data.subheader}">
                                 <h2>{data.subheader}</h2>
@@ -25,7 +25,7 @@
                 <div class="white-after-triangle"></div>
                 <section>
                     <div class="container">
-                        <div class="title-wrapper">
+                        <div class="title-wrapper title-linebreak">
                             <h2 class="header-linebreak">{data.header}</h2>
                         </div>
                     </div>
@@ -33,6 +33,24 @@
             </f:if>
 
         </f:case>
+
+<f:comment>
+
+    <div class="white-after-triangle"></div>
+    <div class="white-before-triangle"></div>
+    <f:comment>
+        <section>
+            <div class="container">
+                <div class="title-wrapper">
+                    <h2>Die Kunststoffgestalter – <br />Ihre Ansprechpartner.</h2>
+                </div>
+            </div>
+        </section>
+    </f:comment>
+
+</f:comment>
+
+
         <f:case value="2">
             <!--Header for 3 Column Container-->
             <f:if condition="{data.header}">
