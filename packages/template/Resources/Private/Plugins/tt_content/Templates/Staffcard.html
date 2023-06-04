@@ -1,0 +1,154 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+<f:layout name="Default" />
+
+<f:section name="Main">
+    <f:if condition="{data.header}">
+        <f:then>
+            <div class="contact-wrapper">
+                <div class="contact-part-top">
+                    <f:if condition="{files}">
+                        <div class="contact-image">
+                            <f:for each="{files}" as="file">
+                                <f:media file="{file}"/>
+                            </f:for>
+                        </div>
+                    </f:if>
+
+                    <div class="contact-info">
+                        <h2>{data.header}</h2>
+                        <h3>{data.subheader}</h3>
+                        <f:format.html>{data.bodytext}</f:format.html>
+                        <f:if condition="{data.header_link}">
+                            <p>
+                                <f:link.typolink parameter="{data.header_link}" class="btn">
+                                    Kontaktieren
+                                </f:link.typolink>
+                            </p>
+                        </f:if>
+                    </div>
+                </div>
+                <div class="contact-part-bottom">
+                    <div class="edge-to-cut"></div>
+                    <div class="rest-bottom"></div>
+                </div>
+            </div>
+        </f:then>
+        <f:else>
+            <f:if condition="{files}">
+                <f:for each="{files}" as="file">
+                    <div class="space"></div>
+                    <div class="contacts-img staffcard-img">
+                        <f:media file="{file}"/>
+                    </div>
+                </f:for>
+            </f:if>
+        </f:else>
+    </f:if>
+
+<f:comment>
+    <section>
+        <div class="container contacts">
+            <!--Franz Knaisch-->
+            <div class="contact-wrapper">
+                <div class="contact-part-top">
+                    <f:if condition="{files}">
+                        <div class="contact-image">
+                            <f:for each="{files}" as="file">
+                                <f:media file="{file}"/>
+                            </f:for>
+                        </div>
+                    </f:if>
+                    <div class="contact-info">
+                        <h2>{data.header}</h2>
+                        <h3>{data.subheader}</h3>
+                        <f:format.html>{data.bodytext}</f:format.html>
+                        <f:if condition="{data.header_link}">
+                            <p>
+                                <f:link.typolink parameter="{data.header_link}" class="btn">
+                                    Kontaktieren
+                                </f:link.typolink>
+                            </p>
+                        </f:if>
+                    </div>
+                </div>
+                <div class="contact-part-bottom">
+                    <div class="edge-to-cut"></div>
+                    <div class="rest-bottom"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+</f:comment>
+
+
+
+
+
+
+
+<f:comment>
+    <f:if condition="{files}">
+        <f:for each="{files}" as="file">
+            <div class="element-container-outer">
+                <div class="staffcard-container">
+                    <f:if condition="{data.header_link}">
+                        <f:then>
+                            <a href="{data.header_link}">
+                                <div class="gallery-elem-content">
+                                    <figure class="gallery-picture">
+                                        <f:media file="{file}"/>
+                                    </figure>
+
+                                    <f:if condition="{data.header}">
+                                        <div class="gallery-background">
+                                            <div class="gallery-text">
+                                                <p>{data.header}</p>
+                                            </div>
+                                            <f:if condition="{data.subheader}">
+                                                <div class="sub-text">
+                                                    <p>{data.subheader}</p>
+                                                </div>
+                                            </f:if>
+                                        </div>
+                                    </f:if>
+                                </div>
+                            </a>
+                        </f:then>
+                        <f:else>
+                            <div class="gallery-elem-content">
+                                <figure class="gallery-picture">
+                                    <f:media file="{file}" width="600"/>
+                                </figure>
+
+                                <f:if condition="{data.header}">
+
+                                    <div class="gallery-background">
+
+                                        <div class="gallery-text">
+                                            <p>{data.header}</p>
+                                        </div>
+                                        <f:if condition="{data.subheader}">
+                                            <div class="sub-text">
+                                                <p>{data.subheader}</p>
+                                            </div>
+                                        </f:if>
+                                    </div>
+                                </f:if>
+                            </div>
+
+                        </f:else>
+                    </f:if>
+
+                </div>
+                <div class="staff-contact-container">
+                    <f:format.html>{data.bodytext}</f:format.html>
+                </div>
+
+        </f:for>
+    </f:if>
+</f:comment>
+
+
+
+</f:section>
+</html>

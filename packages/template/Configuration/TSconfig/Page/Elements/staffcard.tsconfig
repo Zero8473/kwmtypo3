@@ -1,0 +1,20 @@
+mod.wizards.newContentElement.wizardItems {
+    common {
+        elements {
+            staffcard {
+                title = Staffcard
+                description = Eine Visitenkarte
+                iconIdentifier = content-image
+                tt_content_defValues {
+                    CType = staffcard
+                    #imageorient = 0
+                    #imagecols = 1
+                }
+            }
+        }
+        show := addToList(staffcard)
+    }
+}
+
+
+

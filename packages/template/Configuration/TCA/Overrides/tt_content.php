@@ -74,3 +74,58 @@
 #->setIcon('EXT:container_example/Resources/Public/Icons/b13-2cols-with-header-container.svg')
 
 );
+
+
+
+\TYPO3\CMS\Core\Utility\GeneralUtility::makeInstance(\B13\Container\Tca\Registry::class)->configureContainer(
+    (
+    new \B13\Container\Tca\ContainerConfiguration(
+        'b13-container-staffcards', // CType
+        'Visitenkarten Container', // label
+        'Container für Visitenkarten', // description
+        [
+            [
+                [
+                    'name' => '1.Spalte',
+                    'colPos' => 201,
+                    'allowed' => [
+                        'CType' => 'staffcard'
+                    ]
+                ]
+
+            ]
+        ] // grid configuration
+    )
+    )
+);
+
+
+
+$frontendLanguageFilePrefix = 'LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:';
+
+\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addTcaSelectItem(
+    'tt_content',
+    'CType',
+    [
+        'Staffcard',
+        'staffcard',
+        'content-image'
+    ],
+    'textmedia',
+    'after'
+);
+$GLOBALS['TCA']['tt_content']['ctrl']['typeicon_classes']['staffcard'] = 'mimetypes-x-content-text';
+$GLOBALS['TCA']['tt_content']['types']['staffcard'] = [
+    'showitem' => '
+				--palette--;' . $frontendLanguageFilePrefix . 'palette.general;general,
+				--palette--;' . $frontendLanguageFilePrefix . 'palette.headers;headers,small_text,big_text,button_text,
+                bodytext;' . $frontendLanguageFilePrefix . 'bodytext_formlabel,
+            --div--;' . $frontendLanguageFilePrefix . 'tabs.images,
+				image,
+            --div--;' . $frontendLanguageFilePrefix . 'tabs.appearance,
+				--palette--;' . $frontendLanguageFilePrefix . 'palette.appearanceLinks;appearanceLinks,
+                --palette--;' . $frontendLanguageFilePrefix . 'palette.access;access,
+            LLL:EXT:gridelements/Resources/Private/Language/locallang_db.xlf:gridElements, tx_gridelements_container, tx_gridelements_columns
+    ',
+    'columnsOverrides' => ['bodytext' => ['config' => ['enableRichtext' => true]]]
+];

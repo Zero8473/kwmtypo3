@@ -95,3 +95,19 @@ tt_content.b13-container-akkordeon {
     }
 }
 
+tt_content.b13-container-staffcards < lib.contentElement
+tt_content.b13-container-staffcards {
+    templateName = Staffcardscontainer
+    templateRootPaths {
+        10 = EXT:template/Resources/Private/Containers
+    }
+    dataProcessing {
+        201 = B13\Container\DataProcessing\ContainerProcessor
+        201 {
+            colPos = 201
+            as = children_201
+            dataProcessing < temp.containerFileProcessing
+        }
+    }
+}
+

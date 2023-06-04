@@ -1,0 +1,40 @@
+temp.containerFileProcessing {
+    20 = TYPO3\CMS\Frontend\DataProcessing\FilesProcessor
+    20 {
+
+        references.fieldName = image
+        as = files
+    }
+}
+
+tt_content.staffcard =< lib.contentElement
+tt_content.staffcard {
+    templateName = Staffcard
+    dataProcessing {
+        10 = TYPO3\CMS\Frontend\DataProcessing\FilesProcessor
+        10 {
+            references.fieldName = image
+            as = files
+        }
+
+
+        20 = TYPO3\CMS\Frontend\DataProcessing\GalleryProcessor
+        20 {
+            numberOfColumns = 1
+            maxGalleryWidth = {$styles.content.textmedia.maxW}
+            maxGalleryWidthInText = {$styles.content.textmedia.maxWInText}
+            columnSpacing = {$styles.content.textmedia.columnSpacing}
+            borderWidth = {$styles.content.textmedia.borderWidth}
+            borderPadding = {$styles.content.textmedia.borderPadding}
+        }
+
+    }
+
+    stdWrap {
+        # Setup the edit icon for content element "textmedia"
+        editIcons = tt_content: header [header_layout], assets [imageorient|imagewidth|imageheight], [imagecols|imageborder], image_zoom
+        editIcons {
+            iconTitle.data = LLL:EXT:fluid_styled_content/Resources/Private/Language/FrontendEditing.xlf:editIcon.textmedia
+        }
+    }
+}

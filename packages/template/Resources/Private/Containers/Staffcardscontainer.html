@@ -3,32 +3,35 @@
 <f:section name="Main">
     <f:switch expression="{data.layout}">
         <f:case value="0">
-            <!--FarbContainer-->
-            <section class="content content-with-short-height">
-                <div class="container-xl bg-primary with-white-triangle">
-                    <f:for each="{children_201}" as="record">
-                        <f:format.raw>{record.renderedContent}</f:format.raw>
-                    </f:for>
+            <section class="special-layout-1">
+                <div class="container-xl">
+                    <div class="container">
+                        <div class="contacts">
+                            <f:for each="{children_201}" as="record" iteration="iterator">
+                                <f:format.raw>{record.renderedContent}</f:format.raw>
+                            </f:for>
+                        </div>
+                    </div>
                 </div>
             </section>
 
+
         </f:case>
+
         <f:case value="1">
-            <section class="content bg-primary contacts-layout">
-                <div class="container-xl with-white-triangle">
+            <section>
+                <div class="container contacts">
                     <f:for each="{children_201}" as="record">
                         <f:format.raw>{record.renderedContent}</f:format.raw>
                     </f:for>
+
                 </div>
             </section>
-        </f:case>
 
+
+
+        </f:case>
     </f:switch>
+
 </f:section>
 </html>
-
-
-
-
-
-
