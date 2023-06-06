@@ -1,0 +1,41 @@
+#issueform{
+    margin-top: 50px;
+    max-width: 1500px;
+    margin-left: auto;
+    margin-right: auto;
+    z-index: 2;
+    position: relative;
+    font-size: 18px;
+    font-weight: 300;
+    line-height: 1.625em;
+    letter-spacing: 0px;
+    p{
+        min-height: 50px;
+    }
+}
+label.extension{
+    display:inline-block;
+    width: 100px;
+    height: 30px;
+}
+select,input{
+    width: 20%;
+}
+.extension-btn{
+    border:none;
+    width: 20%;
+    margin-left: 3.5%;
+    cursor: pointer;
+}
+
+.message-container{
+    margin: 0px 0px 50px 0px;
+    position: relative;
+}
+
+textarea{
+    resize: vertical; /* Allow vertical resizing */
+    min-height: 100px; /* Set a minimum height */
+    width: 20%; /* Adjust width as needed */
+    box-sizing: border-box; /* Include padding and border in the total height */
+}

@@ -4,29 +4,40 @@
       lang="en"
       data-namespace-typo3-fluid="true">
 
+<div class="white-after-triangle"></div>
+<section class="bg-primary">
+    <div class="container">
+        <div class="title-wrapper">
+            <h2 class="header-linebreak">Senden Sie uns Ihr Anliegen</h2>
+        </div>
+    </div>
+
+
 <f:form id="issueform" action="save" object="{formdata}" objectName="formdata">
     <p>
-        <label for="category">Produkt</label>
+        <label class="extension" for="category">Produkt</label>
         <f:form.select property="category" id="category" options="{categories}"/>
     </p>
     <p>
-        <label for="subject">Betreff</label>
+        <label class="extension" for="subject">Betreff</label>
         <f:form.textfield property="subject" id="subject"/>
     </p>
+    <div class="message-container">
+        <p>
+            <label class="extension"  for="message">Nachricht</label>
+            <f:form.textarea property="message" id="message" cols="30" rows="5"/>
+        </p>
+    </div>
     <p>
-        <label for="message">Nachricht</label>
-        <f:form.textarea property="message" id="message" />
-    </p>
-    <p>
-        <label for="f_name">Name</label>
+        <label class="extension"  for="f_name">Name</label>
         <f:form.textfield property="name" id="f_name"/>
     </p>
     <p>
-        <label for="email">Email</label>
+        <label class="extension"  for="email">Email</label>
         <f:form.textfield property="email" id="email"/>
     </p>
 
-    <f:form.button type="submit">Submit</f:form.button>
+    <f:form.button class="btn extension-btn" type="submit">Abschicken</f:form.button>
 </f:form>
-
+</section>
 </html>
