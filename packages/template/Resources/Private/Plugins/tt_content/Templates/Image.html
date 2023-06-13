@@ -10,7 +10,6 @@
                 </f:for>
             </f:if>
         </f:case>
-
         <!--images accordeon style with subheader as button-->
         <f:case value="1">
             <f:comment>
@@ -42,7 +41,6 @@
                                         </f:if>
                                     </f:for>
                                 </div>
-
                                 <div class="tab-title-wrapper">
                                     <f:for each="{files}" as="file" iteration="iterator">
                                         <f:if condition="{file.title}">
@@ -91,41 +89,65 @@
 
         <!--slideshow with red background-->
         <f:case value="2">
-            <section class="header-slider color-to-right">
-                <div class="container-xl">
-                    <div class="homepage-slider">
-                        <f:if condition="{files}">
-                            <f:for each="{files}" as="file">
-                                <div class="slider-item"><f:media file="{file}"/></div>
-                            </f:for>
-                        </f:if>
-                    </div>
-                    <f:if condition="{data.header}">
-                        <div class="left-slider-area">
+            <f:if condition="{data.header}">
+                <f:then>
+                    <section class="header-slider color-to-right">
+                        <div class="container-xl">
+                            <div class="homepage-slider">
+                                <f:if condition="{files}">
+                                    <f:for each="{files}" as="file">
+                                        <div class="slider-item">
+                                            <f:media file="{file}"/>
+                                        </div>
+                                    </f:for>
+                                </f:if>
+                            </div>
+                            <div class="left-slider-area">
+                                <div class="white-s1">
+                                    <h1>{data.header}</h1>
+                                    <f:if condition="{data.subheader}">
+                                        <h2>{data.subheader}</h2>
+                                    </f:if>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="text--mobile">
                             <div class="white-s1">
                                 <h1>{data.header}</h1>
-
                                 <f:if condition="{data.subheader}">
                                     <h2>{data.subheader}</h2>
                                 </f:if>
                             </div>
                         </div>
-                    </f:if>
-                </div>
-                <f:if condition="{data.header}">
-                    <div class="text--mobile">
-                        <div class="white-s1">
-                            <h1>{data.header}</h1>
+                    </section>
 
-                            <f:if condition="{data.subheader}">
-                                <h2>{data.subheader}</h2>
-                            </f:if>
+                </f:then>
+
+                <f:else>
+                    <!--page header Hero image -->
+                    <section class="header-innerpage color-to-right">
+                        <div class="container-xl">
+                            <div class="image-innerpage">
+                                <f:if condition="{files}">
+                                    <f:for each="{files}" as="file">
+                                        <div class="">
+                                            <f:media file="{file}" alt="Banner"/>
+                                        </div>
+                                    </f:for>
+                                </f:if>
+                            </div>
+                            <div class="left-slider-area">
+                            </div>
                         </div>
-                    </div>
-                </f:if>
-            </section>
+                    </section>
+                </f:else>
+
+            </f:if>
+
         </f:case>
 
+        <!--portfolio-->
         <f:case value="3">
             <f:if condition="{files}">
                 <div class="container four-cols logos">
@@ -148,6 +170,8 @@
                 </div>
             </f:if>
         </f:case>
+
+
 
 
     </f:switch>
