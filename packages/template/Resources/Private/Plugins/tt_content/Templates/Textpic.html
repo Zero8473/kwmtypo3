@@ -5,37 +5,71 @@
 
         <!--picture on the right-->
         <f:case value="0">
-            <f:if condition="{data.header}">
-                <section class="section-title">
-                    <div class="container">
-                        <div class="title-wrapper">
-                            <h3>{data.header}</h3>
-                            <f:if condition="{data.subheader}">
-                                <h2>{data.subheader}</h2>
-                            </f:if>
+            <f:if condition="{data.subheader}">
+                <f:then>
+                    <f:if condition="{data.header}">
+                        <section class="section-title">
+                            <div class="container">
+                                <div class="title-wrapper">
+                                    <h3>{data.header}</h3>
+                                    <f:if condition="{data.subheader}">
+                                        <h2>{data.subheader}</h2>
+                                    </f:if>
+                                </div>
+                            </div>
+                        </section>
+                    </f:if>
+
+                    <section class="content">
+                        <div class="container-xl color-to-right">
+                            <div class="container two-cols">
+                                <div class="text-element text-welcome">
+                                    <f:if condition="{data.bodytext}">
+                                        <f:format.html>{data.bodytext}</f:format.html>
+                                    </f:if>
+                                </div>
+                                <f:if condition="{files}">
+                                    <f:for each="{files}" as="file">
+                                        <div class="bg-primary welcome-image">
+                                            <f:media file="{file}"/>
+                                        </div>
+                                    </f:for>
+                                </f:if>
+                            </div>
                         </div>
-                    </div>
-                </section>
+                    </section>
+                </f:then>
+                <f:else>
+                    <section class="content no-margin-bottom">
+                        <div class="container two-cols services">
+                            <div>
+                                <f:if condition="{data.header}">
+                                    <div class="title-wrapper in-col title-linebreak">
+                                        <h2>{data.header}</h2>
+                                    </div>
+                                </f:if>
+                                <f:if condition="{data.bodytext}">
+                                    <div>
+                                        <f:format.html>{data.bodytext}</f:format.html>
+                                    </div>
+                                </f:if>
+
+                            </div>
+                            <div>
+                                <f:if condition="{files}">
+                                    <f:for each="{files}" as="file">
+                                        <f:media file="{file}" class="move-to-right" alt="Textpic Bild"/>
+                                    </f:for>
+                                </f:if>
+                            </div>
+                        </div>
+
+                    </section>
+
+                </f:else>
+
             </f:if>
 
-            <section class="content">
-                <div class="container-xl color-to-right">
-                    <div class="container two-cols">
-                        <div class="text-element text-welcome">
-                            <f:if condition="{data.bodytext}">
-                                <f:format.html>{data.bodytext}</f:format.html>
-                            </f:if>
-                        </div>
-                        <f:if condition="{files}">
-                            <f:for each="{files}" as="file">
-                                <div class="bg-primary welcome-image">
-                                    <f:media file="{file}"/>
-                                </div>
-                            </f:for>
-                        </f:if>
-                    </div>
-                </div>
-            </section>
         </f:case>
 
         <!--pic on the left and subheader button on the right-->
