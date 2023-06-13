@@ -6,9 +6,10 @@ TCEFORM {
             types {
 
                 b13-container-akkordeon {
-                    removeItems = 1,2,3,4
+                    removeItems = 2,3,4
                     altLabels {
                         0 = Default
+                        1 = Zeitstrahl
                     }
                 }
 
@@ -65,7 +66,7 @@ TCEFORM {
                     altLabels {
                         0 = Default
                         1 = Bilder Akkordeonstyle mit Subheader Button
-                        2 = Slideshow mit rotem Hintergrund
+                        2 = Banner mit rotem Hintergrund
                         3 = Partnerportfolio
                     }
                 }
@@ -73,9 +74,9 @@ TCEFORM {
                 textpic {
                     removeItems = 3
                     altLabels {
-                        0 = Bild rechts
+                        0 = Textpic mit Bild rechts
                         1 = Bilder links mit Subheader Button
-                        2 = Textpic mit rotem Hintergrund und Bild rechts
+                        2 = Textpic mit rotem Container und Bild rechts
                     }
 
                 }
