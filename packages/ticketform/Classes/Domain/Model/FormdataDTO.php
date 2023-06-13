@@ -1,5 +1,4 @@
 <?php
-
 /*
  * This file is part of the TYPO3 project.
  * (c) 2022 B-Factor GmbH / 12bis3 / Sudhaus7 / code711.de
@@ -10,7 +9,6 @@
  *
  * @copyright 2022 B-Factor GmbH / 12bis3 / Sudhaus7 / https://code711.de/
  */
-
 namespace Sudhaus7\Ticketform\Domain\Model;
 
 class FormdataDTO
@@ -27,8 +25,6 @@ class FormdataDTO
         $this->category = $category;
         $this->message = $message;
         $this->subject = $subject;
-
-
     }
 
     /**
@@ -38,7 +34,6 @@ class FormdataDTO
     {
         return $this->name;
     }
-
     /**
      * @param string $name
      */
