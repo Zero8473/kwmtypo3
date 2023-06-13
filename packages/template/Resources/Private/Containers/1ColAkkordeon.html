@@ -34,6 +34,57 @@
             </div>
 
         </f:case>
+
+        <!--timeline-->
+        <f:case value="1">
+            <section class="content no-padding-bottom">
+                <div class="container-xl bg-primary history-container">
+                    <div class="container history-line-wrapper">
+                        <f:for each="{children_201}" as="record" iteration="iterator">
+                            <f:comment>
+                                <f:debug>{record.uid}</f:debug>
+                            </f:comment>
+                            <f:if condition="{record.header}">
+                                <f:if condition="{iterator.isFirst}">
+                                    <f:then>
+                                        <div id="y_{record.uid}" class="y1 hovered">{record.header}</div>
+                                    </f:then>
+                                    <f:else>
+                                        <div id="y_{record.uid}" class="y1">{record.header}</div>
+                                    </f:else>
+                                </f:if>
+                            </f:if>
+                        </f:for>
+
+                        <div class="line-graphic">
+                            <div class="history-line">
+                                -------------------------------------------------------
+                            </div>
+                            <div class="history-arrow"></div>
+                        </div>
+
+                        <f:for each="{children_201}" as="record" iteration="iterator">
+                            <f:if condition="{iterator.isFirst}">
+                                <f:then>
+                                    <f:if condition="{record.bodytext}">
+                                        <div class="text-to-show show" data-hover="y_{record.uid}">
+                                            <f:format.html>{record.bodytext}</f:format.html>
+                                        </div>
+                                    </f:if>
+                                </f:then>
+                                <f:else>
+                                    <f:if condition="{record.bodytext}">
+                                        <div class="text-to-show" data-hover="y_{record.uid}">
+                                            <f:format.html>{record.bodytext}</f:format.html>
+                                        </div>
+                                    </f:if>
+                                </f:else>
+                            </f:if>
+                        </f:for>
+                    </div>
+                </div>
+            </section>
+        </f:case>
     </f:switch>
 </f:section>
 </html>
