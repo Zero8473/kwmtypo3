@@ -428,6 +428,12 @@ body {
     top: -2.5rem;
     margin-right: 0 !important;
 }
+
+.margin-top{
+    margin-top:50px;
+}
+
+
 @media screen and (max-width: 767px) {
     .staffcard-img {
         position: relative;
@@ -2719,7 +2725,7 @@ section.no-margin-bottom {
     .header-innerpage.section-contact-page .left-slider-area {
         background-size: 0, 0; } }
 
-.grid-content .text-box, .grid-content .img-description {
+.grid-content .text-box, .grid-content .img-description, .grid-content div {
     display: -ms-flexbox;
     display: -webkit-flex;
     display: flex;

@@ -22,10 +22,11 @@ TCEFORM {
                 }
 
                 b13-container-2cols {
-                    removeItems = 2,3
+                    removeItems = 3
                     altLabels {
                         0 = Default
                         1 = 2 Spalten mit kleinem Bild
+                        2 = Bildercollage
                     }
                 }
 
@@ -37,10 +38,17 @@ TCEFORM {
                 }
 
                 b13-container-staffcards {
-                    removeItems = 2,3
+                    removeItems = 1,2,3
                     altLabels {
                         0 = Default
                         1 = Alternative test
+                    }
+                }
+
+                b13-container-collage {
+                    removeItems = 1,2,3
+                    altLabels {
+                        0 = Default
                     }
                 }
 

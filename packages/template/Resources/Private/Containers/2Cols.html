@@ -31,11 +31,171 @@
                     </div>
                     <div>
                         <f:for each="{children_202}" as="record">
-                            <f:format.raw>{record.renderedContent}</f:format.raw>
+                            <f:if condition="{record.files}">
+                                <f:then>
+                                    <f:for each="{record.files}" as="file">
+                                        <div><f:media file="{file}" class="move-to-right"/></div>
+                                    </f:for>
+                                </f:then>
+                                <f:else>
+                                    <f:format.raw>{record.renderedContent}</f:format.raw>
+                                </f:else>
+                            </f:if>
                         </f:for>
                     </div>
                 </div>
             </section>
+        </f:case>
+
+        <!--image collage 2 cols-->
+        <f:case value="2">
+            <div class=" two-cols no-space grid-content">
+                <div>
+                    <f:for each="{children_201}" as="record">
+                        <f:comment>
+                            <f:debug>{record.files}</f:debug>
+                        </f:comment>
+                        <f:if condition="{record.files}">
+                            <f:then>
+                                <f:for each="{record.files}" as="file">
+                                    <div class="img-box">
+                                        <f:media file="{file}" alt="Image"/>
+                                        <div class="img-description">
+                                            <div class="text-box">
+                                                <div class="text-box-inner">
+                                                    <f:if condition="{record.header}">
+                                                        <h3 class="h-large"> {record.header} </h3>
+                                                    </f:if>
+                                                    <f:if condition="{record.subheader}">
+                                                        <span class="small-text">{record.subheader}</span>
+                                                    </f:if>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </f:for>
+                            </f:then>
+                            <f:else>
+                                <div class="text-box">
+                                    <div class="text-box-inner">
+                                        <f:if condition="{record.header}">
+                                            <h3 class="h-large">{record.header}</h3>
+                                        </f:if>
+                                        <f:if condition="{record.subheader}">
+                                            <span class="small-text">{record.subheader}</span>
+                                        </f:if>
+                                    </div>
+                                </div>
+                            </f:else>
+                        </f:if>
+                    </f:for>
+                </div>
+                <div>
+                    <f:for each="{children_202}" as="record">
+                        <f:if condition="{record.files}">
+                            <f:then>
+                                <f:for each="{record.files}" as="file">
+                                    <div class="img-box">
+                                        <f:media file="{file}" alt="Image"/>
+                                        <div class="img-description">
+                                            <div class="text-box">
+                                                <div class="text-box-inner">
+                                                    <f:if condition="{record.header}">
+                                                        <h3 class="h-large"> {record.header} </h3>
+                                                    </f:if>
+                                                    <f:if condition="{record.subheader}">
+                                                        <span class="small-text">{record.subheader}</span>
+                                                    </f:if>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </f:for>
+                            </f:then>
+                            <f:else>
+                                <div class="text-box">
+                                    <div class="text-box-inner">
+                                        <f:if condition="{record.header}">
+                                            <h3 class="h-large">{record.header}</h3>
+                                        </f:if>
+                                        <f:if condition="{record.subheader}">
+                                            <span class="small-text">{record.subheader}</span>
+                                        </f:if>
+                                    </div>
+                                </div>
+                            </f:else>
+                        </f:if>
+                    </f:for>
+                </div>
+
+            </div>
+            <f:comment>
+                <div class=" two-cols no-space grid-content">
+                    <div class="box-with-image-and-text">
+
+                        <div class="two-cols no-space">
+                            <div class="img-box">
+                                <img alt="Image" src="Images/Company/Asset-2.png"/>
+                                <div class="img-description">
+                                    <div class="text-box">
+                                        <div class="text-box-inner less-padding">
+                                            <h3 class="very-large-text">
+                                                seit 1969
+                                            </h3>
+                                            <span class="small-text">Kunststoffkompetenz</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="img-box">
+                                <img alt="Image" src="Images/Company/Asset-4.png"/>
+                                <div class="img-description">
+                                    <div class="text-box">
+                                        <div class="text-box-inner">
+                                            <h3 class="h-large">
+                                                12.000 qm<br/>
+                                                zur Erzielung <br/>
+                                                einer hohen <br/>
+                                                Liefersicherheit
+                                            </h3>
+                                            <span class="small-text">Produktions- und Lagerfläche</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="text-box">
+                            <div class="text-box-inner">
+                                <h3 class="h-large">
+                                    alle gängigen Thermoplaste,<br/>
+                                    PUR halbhart (Integralschaum)<br/>
+                                    im Spritzguß- und <br/>
+                                    Schäumverfahren (TSG + GID)
+                                </h3>
+                                <span class="small-text">Verarbeitete Werkstoffe</span>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="img-box">
+                        <img alt="Image" src="Images/Company/Asset-5.png"/>
+                        <div class="img-description">
+                            <div class="text-box">
+                                <div class="text-box-inner">
+                                    <h3 class="h-large">
+                                        21 Spritzgussmaschinen<br/>
+                                        40-1.000 t Schließkraft<br/>
+                                        bis ca. 4.800 g Schussgewicht
+                                    </h3>
+                                    <span class="small-text">Maschinenpark</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </f:comment>
         </f:case>
     </f:switch>
 </f:section>

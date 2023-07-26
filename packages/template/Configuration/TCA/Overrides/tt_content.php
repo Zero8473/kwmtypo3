@@ -100,6 +100,25 @@
 );
 
 
+\TYPO3\CMS\Core\Utility\GeneralUtility::makeInstance(\B13\Container\Tca\Registry::class)->configureContainer(
+    (
+    new \B13\Container\Tca\ContainerConfiguration(
+        'b13-container-collage', // CType
+        'Container Bildercollage', // label
+        'Ein Container zur Gruppierung für Bildercollagen', // description
+        [
+            [
+                ['name' => '1.Spalte', 'colPos' => 201]
+            ]
+        ] // grid configuration
+    )
+    )
+// set an optional icon configuration
+#->setIcon('EXT:container_example/Resources/Public/Icons/b13-2cols-with-header-container.svg')
+
+);
+
+
 
 $frontendLanguageFilePrefix = 'LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:';
 

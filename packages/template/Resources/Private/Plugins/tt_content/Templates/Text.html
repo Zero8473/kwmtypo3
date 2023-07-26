@@ -9,10 +9,10 @@
                     <f:if condition="{data.header}">
                         <div class="title-wrapper in-col">
                             <h2>{data.header}</h2>
-                            <f:if condition="{data.subheader}">
-                                <h3>{data.subheader}</h3>
-                            </f:if>
                         </div>
+                    </f:if>
+                    <f:if condition="{data.subheader}">
+                        <h3 class="text-color-red"><strong class="bolder">{data.subheader}</strong></h3>
                     </f:if>
                     <f:if condition="{data.bodytext}">
                         <div>
